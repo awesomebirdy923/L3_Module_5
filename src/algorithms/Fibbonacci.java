@@ -8,7 +8,7 @@ public class Fibbonacci {
 
 	public static void main(String[] args) {
 		// iterativeFibbonacci();
-		recursiveFibbonacci(1000);
+		recursiveFibbonacci(10);
 	}
 
 	private static void iterativeFibbonacci() {
@@ -21,15 +21,14 @@ public class Fibbonacci {
 		}
 	}
 
-	private static void recursiveFibbonacci(int i) {
-		while (i != 0) {
-			i--;
-			recursiveFibbonacci(i);
+	private static void recursiveFibbonacci(int max) {
+		while (max != 0) {
+			max--;
 			temp2 = previousVal;
 			previousVal += currentVal;
 			currentVal = temp2;
 			System.out.println(currentVal);
+			recursiveFibbonacci(max);
 		}
 	}
-
 }
