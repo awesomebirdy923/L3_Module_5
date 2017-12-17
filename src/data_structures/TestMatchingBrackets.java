@@ -28,9 +28,17 @@ public class TestMatchingBrackets {
 		for (int i = 0; i < b.length(); i++) {
 			if (b.charAt(i) == 123) {
 //				brackets.push(b.charAt(i));
-				return true;
+				brackets.push('{');
+			} else if (brackets.size() == 0){
+				return false;
+			} else {
+				brackets.pop();
 			}
 		}
-		return false;
+		if(brackets.size() == 0) {
+		return true;
+		}else {
+			return false;
+		}
 	}
 }
